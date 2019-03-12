@@ -3,7 +3,7 @@ md = MessageDigest.getInstance("SHA-512");
 } catch (NoSuchAlgorithmException e) {
 e.printStackTrace();
 }
-md.update(args[0].getBytes());
+md.update(VARIABLE A HASHER.getBytes());
 
 byte[] digest = md.digest();
 StringBuffer sb = new StringBuffer();
