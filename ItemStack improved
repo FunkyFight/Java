@@ -1,0 +1,40 @@
+package fr.funkyfight.main;
+
+import java.util.List;
+
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
+public class ItemCreator {
+	
+	public ItemStack Item;
+	
+	public ItemCreator(Material material) {
+		this.Item = new ItemStack(material);
+	}
+	
+	public void setDisplayName(String displayname) {
+		ItemMeta itm = Item.getItemMeta();
+		itm.setDisplayName(displayname);
+		Item.setItemMeta(itm);
+	}
+	
+	public void setLore(List<String> lore) {
+		ItemMeta itm = Item.getItemMeta();
+		itm.setLore(lore);
+		Item.setItemMeta(itm);
+	}
+	
+	public void addEnchant(Enchantment enchant, Integer level, Boolean LevelRestriction) {
+		ItemMeta itm = Item.getItemMeta();
+		itm.addEnchant(enchant, level, LevelRestriction);
+		Item.setItemMeta(itm);
+	}
+	
+	public ItemStack get() {
+		return Item;
+	}
+	
+}
